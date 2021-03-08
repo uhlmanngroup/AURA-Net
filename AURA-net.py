@@ -114,13 +114,13 @@ class AURA-net(nn.Module):
      
         self.layer1 = nn.Sequential(*self.base_layers[3:5])
        
-        self.layer2 = self.base_layers[5]  # size=(N, 128, x.H/8, x.W/8)
+        self.layer2 = self.base_layers[5] 
        
-        self.layer3 = self.base_layers[6]  # size=(N, 256, x.H/16, x.W/16)
+        self.layer3 = self.base_layers[6]  
         
-        self.layer4 = self.base_layers[7]  # size=(N, 512, x.H/32, x.W/32)
+        self.layer4 = self.base_layers[7]  
 
-        self.fix=nn.Upsample(scale_factor=4)
+        
         
         
         self.Maxpool1 = nn.MaxPool2d(kernel_size=2, stride=2)
