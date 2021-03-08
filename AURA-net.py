@@ -1,9 +1,5 @@
 # -*- coding: utf-8 -*-
-"""
-Éditeur de Spyder
 
-Ceci est un script temporaire.
-"""
 
 from __future__ import print_function, division
 import torch.nn as nn
