@@ -107,8 +107,7 @@ class AURA-net(nn.Module):
         
 
         self.base_layers = list(self.base_model.children())
-        
-        # size=(N, 64, x.H/2, x.W/2)
+
         
 
         self.layer0 = nn.Sequential(*self.base_layers[:3])
@@ -121,8 +120,6 @@ class AURA-net(nn.Module):
         
         self.layer4 = self.base_layers[7]  # size=(N, 512, x.H/32, x.W/32)
 
-        
-      
         self.fix=nn.Upsample(scale_factor=4)
         
         
@@ -174,23 +171,15 @@ class AURA-net(nn.Module):
 
         x_original = self.conv_original_size0(x)
         x_original = self.conv_original_size1(x_original)
-        
-       
+
         
         e0 = self.layer0(x)
-        
-        
       
         e1= self.layer1(e0)
         
-        
         e2 = self.layer2(e1)
-    
-        
-        
+
         e3 = self.layer3(e2)
-        
-        
         
         e4 = self.layer4(e3)
         
@@ -235,8 +224,6 @@ class AURA-net(nn.Module):
         
 
         out = self.Conv(d0)
-
-
 
       #  out = self.active(out)
 
