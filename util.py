@@ -35,11 +35,11 @@ def load_set(folder, is_mask, shuffle=False):
 
 
     
-def load_image(path,is_mask):#convert the image in array if it is the image and put is_mask=True if it is the mask 
+def load_image(path,is_mask):
     if not is_mask:
-        return np.asarray(Image.open(path).convert("RGB"))#in RGB if not mask
+        return np.asarray(Image.open(path).convert("RGB"))
     else:
-        return np.asarray(Image.open(path).convert('L'))#convert image to monochrome
+        return np.asarray(Image.open(path).convert('L'))
 
 
 def load_set_txt(folder):
@@ -68,7 +68,7 @@ def create_dir(dirname):
 def to_numpy(tensor):
     return tensor.detach().cpu().numpy()
 
-def resize_my_images(src, dst):#source and destination
+def resize_my_images(src, dst):
 
     #credits: https://evigio.com/post/resizing-images-into-squares-with-opencv-and-python
     
@@ -77,7 +77,7 @@ def resize_my_images(src, dst):#source and destination
     img_size = 512
     path = src
     for img_name in sorted(os.listdir(path)):
-        #if img_name.endswith(change):
+        
         img = None
         print(img_name)
 
@@ -89,7 +89,7 @@ def resize_my_images(src, dst):#source and destination
         a2 = h/w
 
         if(a1 > a2):
-            # if width greater than height
+            
             w_target = round(img_size * a1)
             h_target = img_size
 
@@ -101,7 +101,7 @@ def resize_my_images(src, dst):#source and destination
             
 
         elif(a1 < a2):
-            # if height greater than width
+            
             w_target = img_size
             h_target = round(img_size * a2)
 
@@ -112,7 +112,7 @@ def resize_my_images(src, dst):#source and destination
 
             
         elif(a1 == a2):
-            # if height and width are equal
+            
             w_target = img_size
             h_target = img_size
 
@@ -123,7 +123,7 @@ def resize_my_images(src, dst):#source and destination
             
 
         if(crop_img.shape[0] != img_size or crop_img.shape[1] != img_size):
-            # print('someting....')
+            
             crop_img = r_img[0:img_size, 0:img_size]
 
         if(crop_img.shape[0] == img_size and crop_img.shape[1] == img_size):
