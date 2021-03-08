@@ -19,17 +19,15 @@ def plot_side_by_side(im1,im2):
   
   
   
-def show_me_img(path):#show a single image
+def show_me_img(path):
   tif=TIFF.open(path)
   image=tif.read_image()
   plt.imshow(image,interpolation='nearest')
   plt.show()
 
 
-#This function shows evry image in the folder , sorted as image and mask
 def show_me_folder(path):
   for file in sorted(os.listdir(path)):
-    #if file.endswith(change):#on colab, deleting files will add some weird stuff on the folder
     base_direc=path+'/'
     print(file)
     tif=TIFF.open(base_direc+file)
@@ -37,7 +35,6 @@ def show_me_folder(path):
     plt.imshow(image,interpolation='nearest')
     plt.show()
 
-#Visualisation of albumentations transform
 
 def visualize(image, mask, original_image=None, original_mask=None):
     fontsize = 18
