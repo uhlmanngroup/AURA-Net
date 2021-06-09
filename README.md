@@ -1,6 +1,6 @@
 # AURA-NET: ROBUST CELL SEGMENTATION IN SMALL PHASE-CONTRAST IMAGE DATASETS. 
 
-This repository contains the implementation of AURA-net: https://arxiv.org/pdf/2102.01389.pdf.
+This repository contains the implementation of AURA-net: https://arxiv.org/pdf/2102.01389.pdf, published version on https://ieeexplore.ieee.org/abstract/document/9433993.
 
 AURA-NET is a modified U-Net architecture designed to answer the problem of segmentation for small datasets of Phase Contrast microscopy images (and other similar modality).
 
